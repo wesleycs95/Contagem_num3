@@ -1,33 +1,20 @@
-function contar() {
-    var numIniElement = document.querySelector('#numini');
-    var numFimElement = document.querySelector('#numfim');
-    var numpassElement = document.querySelector('#numpass');
+function calcular() {
+    let a = document.getElementById('valini')
+    let numentrada = Number(a.value)
+    let resultado = document.getElementById('res')
 
-    var numIni = Number(numIniElement.value);
-    var numFim = Number(numFimElement.value);
-    var numpass = Number(numpassElement.value);
-    var resultado = document.getElementById('res')
-
-    if (numIni == 0 || numFim == 0 || numpass.length == 0) {
-        alert('Erro, verifique os dados e tente novamente.');
-    } else{
-        resultado.innerHTML = 'Contando: '
-
-        if (numpass <= 0 ){
-            alert('Passo inválido! Considerando Passo "1"')
-            numpass = 1
+     if (numentrada == 0) {
+        resultado.innerHTML = '<strong> Preencha o Campo'
         }
 
-        if(numIni <= numFim){
-            for (let c = numIni; c <= numFim ; c += numpass){
-                resultado.innerHTML += `${c} \u{1F449}`
-        }
-        } else {
-            for (let c = numIni; c >= numFim ; c -= numpass){
-                resultado.innerHTML += `${c} \u{1F449}`
+    else{resultado.innerHTML =''
 
-            }
-        }
-        resultado.innerHTML += `\u{1F3C1}`
+            for (let i= 1 ; i <= 10 ; i++){
+                multip = numentrada * i
+                resultado.innerHTML += `${numentrada} x ${i} = ${multip} <br>`
+                }
+
+        
     }
+    
 }
